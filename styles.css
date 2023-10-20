@@ -591,10 +591,25 @@ footer a {
     }
 }
 
+@media screen and (max-width: 320px) {
+    .redes-sociais {
+        top: 226px;
+    }
+    .redes-sociais a {
+        font-size: 35px;
+    }
+    .apresentacao {
+        height: 303px ;
+    }
+    .apresentacao picture img {
+        height: 303px;
+    }
+}
+
 @media screen and (min-width: 390px) {
     .redes-sociais {
         top: 253px;
-    }
+    }    
 }
 
 @media only screen and (min-width: 400px) and (max-width: 600px) {
