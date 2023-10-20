@@ -21,7 +21,6 @@ menuIcon.addEventListener('click', function () {
     }
 });
 
-
 //slides
 
 let slideIndex = 0;
