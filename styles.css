@@ -25,7 +25,7 @@ body {
     padding: 0;
     font-family: var(--fontetexto);
     line-height: 1.6;
-    background-color: var(--cor05);
+    background-color: var(--cor03);
     color: var(--cor01);
 }
 
@@ -39,6 +39,7 @@ header {
     justify-content: space-between;
     background-color: var(--cor03);
     padding: 10px;
+    background-color: var(--cor04);
 }
 
 .logo img {
@@ -49,8 +50,7 @@ header {
 .redes-sociais {
     display: flex;
     align-items: center;
-    gap: 20px;
-    /* adiciona espaço entre os ícones */
+    gap: 20px;    /* adiciona espaço entre os ícones */
 }
 
 .redes-sociais a {
@@ -64,11 +64,12 @@ header {
     justify-content: space-between;
     position: relative;
     width: 100%;
+    background-color: var(--cor05);
     box-shadow: 0 4px 4px 0 var(--cor08);
 }
 
 .menu:hover {
-    background-color: var(--cor03);
+    background-color: var(--cor04);
 }
 
 .menu a {
@@ -93,27 +94,30 @@ header {
 
 .menu-icon {
     display: inline;
-    margin: 10px 25px 10px 10px;
+    margin: 10px 25px 10px 25px;
     font-size: 25px;
     color: var(--cor01);
     cursor: pointer;
 }
 
 #menu-lista {
-    background-color: var(--cor03);
+    background-color: var(--cor05);
     list-style: none;
     position: absolute;
     text-align: left;
-    right: 50px;
-    top: 50px;
-    padding: 10px;
-    border-radius: 5px;
-    border: solid 1px var(--cor01);
-    box-shadow: 0 4px 4px 0 var(--cor08);
+    margin: 0;       
+    right: 0;
+    top: 100%;        
+    box-shadow: 0 4px 4px 0 var(--cor08);  
 }
 
 #menu-lista li {
-    display: block;
+    padding: 25px 50px 25px 50px; 
+    display: block;    
+}
+
+#menu-lista li:hover {
+    background-color: var(--cor04);
 }
 
 .menuEscondido {
@@ -124,18 +128,21 @@ header {
     transition: opacity 0.3s, max-height 0.3s;
 }
 
-/* adiciona a classe "menu visivel" */
-.menuVisivel {
+.menuVisivel { /* adiciona a classe "menu visivel" */
     opacity: 1;
     max-height: 500px;
 }
 
-section {
-    width: 100%;
+.menu-social {
+    display: none;
 }
 
-.apresentacao {
-    height: 510px;
+section {
+    width: 100%;    
+}
+
+.apresentacao {    
+    height: auto;
 }
 
 .apresentacao picture img {
@@ -143,10 +150,10 @@ section {
     height: auto;
 }
 
-#sobre-nos {
+#sobre-nos {    
     height: 510px;
     background-color: var(--cor03);
-    box-shadow: 0 4px 4px 0 var(--cor08);
+    box-shadow: 0 4px 4px 0 var(--cor01);
 }
 
 #sobre-nos h1 {
@@ -203,6 +210,12 @@ section {
     text-decoration: none;
     border-radius: 5px;
     box-shadow: 0 4px 4px 0 var(--cor08);
+    transition: transform 0.3s;
+}
+
+.dupla a:hover {
+    font-weight: bold;
+    transform: scale(1.2);
 }
 
 #adote {
@@ -218,6 +231,7 @@ section {
     overflow: hidden;
     width: 100%;
     height: 510px;
+    background-color: var(--cor05);
 }
 
 .slide {
@@ -354,15 +368,14 @@ footer a {
 }
 
 /* Dispositivos pequenos (como iPhones 5, 6, 7, 8) */
-@media (max-width: 600px) {
+@media (max-width: 600px){
     header {
-        flex-direction: column;
-        /* Altera a direção do layout para coluna em telas menores */
+        background-color: var(--cor04);
+        flex-direction: column;        /* Altera a direção do layout para coluna em telas menores */
     }
 
     .logo {
-        text-align: center;
-        /* Centraliza a imagem */
+        text-align: center;        
     }
 
     .logo img {
@@ -372,16 +385,11 @@ footer a {
     }
 
     .redes-sociais {
-        display: block;
-        position: absolute;
-        top: 237px;
-        right: 0;
-        z-index: 1;
-    }
+        display: none;     
+    }    
 
-    .redes-sociais a {
-        margin: 20px;
-        font-size: 45px;
+    .menu:hover {
+        background-color: var(--cor05);
     }
 
     .menu ul {
@@ -397,17 +405,16 @@ footer a {
         font-size: 45px;
     }
 
-    #menu-lista {
-        top: 87px;
-        right: 0;
-        left: -25px;
-        font-size: 25px;
+   #menu-lista {        
+        left: 0;        
+        font-size: 25px;        
         text-align: left;
         border-radius: 0;
     }
 
-    #menu-lista li {
+    #menu-lista li {         
         display: block;
+        padding: 10px 25px 15px 25px;
     }
 
     .menuEscondido {
@@ -423,6 +430,18 @@ footer a {
         max-height: 490px;
     }
 
+    .menu-social {
+        display: flex;
+        align-items: center;
+        gap: 20px;    /* adiciona espaço entre os ícones */
+    }
+    
+    .menu-social a {
+        margin-right: 20px;
+        font-size: 25px;
+        color: var(--cor01);
+    }
+
     .apresentacao {
         height: 403px;
     }
@@ -434,7 +453,6 @@ footer a {
 
     #sobre-nos {
         height: auto;
-
     }
 
     #sobre-nos h1 {
@@ -455,8 +473,7 @@ footer a {
     }
 
     .dupla {
-        width: calc(100% - 20px);
-        /* Ajusta a largura para ocupar metade do espaço disponível, com espaço de 20px entre elas */
+        width: calc(100% - 20px);         /* Ajusta a largura para ocupar metade do espaço disponível, com espaço de 20px entre elas */
         height: auto;
         margin: 10px;
     }
@@ -478,8 +495,8 @@ footer a {
         display: inline-block;
         padding: 10px 20px;
         margin: 0 20px 20px 20px;
-        max-width: 100%;
-    }
+        max-width: 100%;        
+    }    
 
     #adote, #apadrinhe {
         margin: 20px;
@@ -591,40 +608,135 @@ footer a {
     }
 }
 
-@media screen and (max-width: 320px) {
-    .redes-sociais {
-        top: 226px;
-    }
-    .redes-sociais a {
-        font-size: 35px;
-    }
+@media (min-width: 601px) and (max-width: 992px) {
     .apresentacao {
-        height: 303px ;
+        height: auto;
     }
     .apresentacao picture img {
-        height: 303px;
+        height: auto;
     }
-}
 
-@media screen and (min-width: 390px) {
-    .redes-sociais {
-        top: 253px;
+    #sobre-nos {
+        height: auto;
+    }
+
+    #container {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .dupla {
+        width: calc(100% - 20px);         /* Ajusta a largura para ocupar metade do espaço disponível, com espaço de 20px entre elas */
+        height: auto;
+        margin: 10px;
+    }
+
+    .dupla h2 {
+        font-size: 30px;
+        margin: 10px;
+    }
+
+    .dupla p {
+        text-align: center;
+        color: var(--cor05);
+        padding: 10px 25px 10px 25px;
+    }
+
+    .dupla a {
+        font-size: large;
+        text-align: center;
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 0 20px 20px 20px;
+        max-width: 100%;        
     }    
-}
 
-@media only screen and (min-width: 400px) and (max-width: 600px) {
-    .redes-sociais {        
-        top: 266px;        
+    #adote, #apadrinhe {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-    
-}
 
-/* Dispositivos grandes (como tablets) */
-@media only screen and (min-width: 993px) and (max-width: 1200px) {
-    /* Estilos para dispositivos grandes aqui */
-}
+    .indicador-slide {
+        text-align: center;
+        background-color: var(--cor05);
+        box-shadow: 0 4px 4px 0 var(--cor08);
+    }
 
-/* Dispositivos extra grandes (como laptops, desktops) */
-@media only screen and (min-width: 1201px) {
-    /* Estilos para dispositivos extra grandes aqui */
-}
+    .indicador {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--cor04);
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    #contato {
+        background-color: var(--cor02);
+        color: var(--cor05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .info, .conecte, .mensagem {
+        display: block;
+        text-align: left;
+        height: auto;
+        line-height: 2;
+        margin: 10px 0;
+        width: 80%;
+    }
+
+    .conecte li {
+        list-style: none;
+        padding: 10px 0 10px 0;
+    }
+
+    .conecte a {
+        color: var(--cor05);
+    }
+
+    .mensagem {
+        margin-bottom: 35px;
+    }
+
+    .mensagem input {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 3px;
+    }
+
+    .mensagem textarea {
+        width: 100%;
+        height: 200px;
+    }
+
+    ::placeholder {
+        color: var(--cor05);
+        font-family: var(--fontetexto);
+    }
+
+    .voltar-topo {
+        position: fixed;
+        bottom: 35px;
+        right: 20px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    /* adiciona a classe "oculto" e quando estiver ativa mostrará o item oculto */
+    .voltar-topo.oculto {
+        opacity: 1;
+    }
+
+    .voltar-topo a {
+        color: var(--cor01);
+        font-size: 2em;
+    }    
+  }
